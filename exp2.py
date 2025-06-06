@@ -13,7 +13,7 @@ def Cost(H, condition, weight = 1):
     cost[Path_B] = PathB
   return cost
 
-# Update the cost
+
 def update_cost(H, Conditions, weight=1):
   Main_nodes = list(Conditions.keys())
   Main_nodes.reverse()
@@ -26,7 +26,7 @@ def update_cost(H, Conditions, weight=1):
     least_cost[key] = Cost(H, condition, weight)
   return least_cost
 
-# Print the shortest path
+
 def shortest_path(Start,Updated_cost, H):
   Path = Start
   if Start in Updated_cost.keys():
@@ -35,14 +35,14 @@ def shortest_path(Start,Updated_cost, H):
     values = list(Updated_cost[Start].values())
     Index = values.index(Min_cost)
 
-    # FIND MINIMIMUM PATH KEY
+    
     Next = key[Index].split()
-    # ADD TO PATH FOR OR PATH
+    
     if len(Next) == 1:
 
       Start =Next[0]
       Path += '<--' +shortest_path(Start, Updated_cost, H)
-    # ADD TO PATH FOR AND PATH
+    
     else:
       Path +='<--('+key[Index]+') '
 
@@ -56,7 +56,7 @@ def shortest_path(Start,Updated_cost, H):
 
 
 #Sample Input and Output
-#Sample Run
+
 H = {'A': -1, 'B': 5, 'C': 2, 'D': 4, 'E': 7, 'F': 9, 'G': 3, 'H': 0, 'I':0, 'J':0}
 
 Conditions = {
