@@ -12,18 +12,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 
 def lowess(X, y, f=0.5, kernel='gaussian', n_neighbors=5):
-    """
-    Apply the LOWESS algorithm to the given input-output data.
-    Parameters:
-    X (array-like): Input data with shape (n_samples, n_features).
-    y (array-like): Output data with shape (n_samples,).
-    f (float): Fraction of the data used for fitting.
-    kernel (str): Kernel function used to compute the weights. Can be either 'gaussian' or 'triangular'.
-    n_neighbors (int): Number of neighbors used for smoothing.
-    Returns:
-    y_pred (array-like): Predicted output data with shape (n_samples,).
-    """
-
     
     y_pred = np.zeros_like(y)
 
